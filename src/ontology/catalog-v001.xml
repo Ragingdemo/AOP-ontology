@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
   <group id="odk-managed-catalog" prefer="public">
+    <uri name="http://purl.obolibrary.org/obo/aopo/aopo-core.owl" uri="components/aopo-core.owl"/>
     <uri name="http://purl.obolibrary.org/obo/aopo/imports/ro_import.owl" uri="imports/ro_import.owl"/>
     <uri name="http://purl.obolibrary.org/obo/aopo/imports/iao_import.owl" uri="imports/iao_import.owl"/>
     <uri name="http://purl.obolibrary.org/obo/aopo/imports/chebi_import.owl" uri="imports/chebi_import.owl"/>
