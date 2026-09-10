@@ -23,7 +23,9 @@ bin/
 /aopo-full.*
 /aopo-simple.*
 /aopo-simple-non-classified.*
-/mappings/
+# ODK-generated mappings are ignored; aopo-aopkb.sssom.tsv is hand-curated.
+/mappings/*
+!/mappings/aopo-aopkb.sssom.tsv
 /patterns/
 /reports/
 /subsets/

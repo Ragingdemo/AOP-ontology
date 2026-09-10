@@ -1,0 +1,12 @@
+# curie_map:
+#   AOPO: http://purl.obolibrary.org/obo/AOPO_
+#   aopkb: http://aopkb.org/aop_ontology#
+#   semapv: https://w3id.org/semapv/vocab/
+#   skos: http://www.w3.org/2004/02/skos/core#
+# mapping_set_id: https://w3id.org/aopo/mappings/aopo-aopkb.sssom.tsv
+# mapping_set_description: Correspondences between this ontology and the legacy AOPO namespace consumed by AOP-Wiki RDF. Populating this is a prerequisite for any migration — see docs/decisions/0004-legacy-aopo.md.
+# license: https://creativecommons.org/licenses/by/4.0/
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	comment
+AOPO:0000107	key_event_relationship	skos:exactMatch	aopkb:KeyEventRelationship		semapv:UnspecifiedMatching	UNVERIFIED — confirm against the legacy file before relying on it
+AOPO:0000048	has_upstream_key_event	skos:exactMatch	aopkb:has_upstream_key_event		semapv:UnspecifiedMatching	UNVERIFIED
+AOPO:0000026	has_downstream_key_event	skos:exactMatch	aopkb:has_downstream_key_event		semapv:UnspecifiedMatching	UNVERIFIED

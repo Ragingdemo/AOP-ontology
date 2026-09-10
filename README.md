@@ -1,5 +1,20 @@
 # Adverse Outcome Pathway Ontology (AOPO)
 
+## Status: pre-release
+
+The ontology has been rebuilt as a BFO-aligned core (`src/ontology/components/aopo-core.owl`)
+plus an AOP-Wiki module (`src/ontology/aopo-edit.owl`). **No version has been released**,
+no version IRI is stamped, and no release artefacts are committed.
+
+213 identifiers migrated from the legacy `aopkb.org` ontology are not yet represented in
+the rewrite and are reserved — see [`docs/term-backlog.md`](docs/term-backlog.md). The
+final version follows once they are re-modelled or deprecated. Read
+[`docs/pre-release.md`](docs/pre-release.md) for the full exit criteria and
+[`docs/known-issues.md`](docs/known-issues.md) for what QC currently tolerates.
+
+The `AOPO_` PURLs are provisional and do not resolve. Do not cite them yet.
+
+
 OBO-aligned ontology starter migrated from the legacy [AOP-KB ontology](../aop-ontology/) using the [Ontology Development Kit (ODK)](https://github.com/INCATools/ontology-development-kit).
 
 ## Quick start
