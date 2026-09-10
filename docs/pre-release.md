@@ -9,6 +9,7 @@ stable identifier source until then.
 
 - The ODK harness is authoritative. Build and test with `sh run.sh make test` and
   `sh run.sh make prepare_release` from `src/ontology/`, as ODK generated it.
+  `docs/release-process.md` describes how that connects to semantic-release.
 - No release artefacts are committed and `prepare_release` has not been run. Running it
   stamps version IRIs and produces the release — do not until the criteria below are met.
 - The custom checks in `src/ontology/aopo.Makefile` run as part of ODK's normal

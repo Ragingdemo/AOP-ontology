@@ -1,0 +1,31 @@
+name: Release
+
+# Manual only while pre-release. There is no version to publish until the terms in
+# docs/term-backlog.md are migrated — see docs/release-process.md. The absence of a
+# push trigger is deliberate: merging to main must not cut a release by accident.
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version, e.g. 2026-10-01. Read docs/release-process.md first."
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { persist-credentials: true }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Build release artefacts with ODK
+        run: |
+          cd src/ontology
+          sh run.sh make prepare_release VERSION=${{ inputs.version }}
+      - name: Publish
+        run: npm install && npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,10 @@
+{
+  "title": "Adverse Outcome Pathway Ontology (AOPO)",
+  "description": "A BFO-aligned ontology of the adverse outcome pathway framework with a pluggable AOP-Wiki record module.",
+  "license": "Apache-2.0",
+  "upload_type": "software",
+  "keywords": ["adverse outcome pathway", "ontology", "toxicology", "AOP-Wiki", "BFO"],
+  "creators": [
+    { "name": "Sharma, Shubh", "affiliation": "Universitat Rovira i Virgili" }
+  ]
+}

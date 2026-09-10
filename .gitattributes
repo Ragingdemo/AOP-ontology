@@ -1,0 +1,9 @@
+# ODK release artefacts at the repository root are build output.
+/aopo*.owl linguist-generated=true
+/aopo*.obo linguist-generated=true
+/aopo*.json linguist-generated=true
+src/ontology/imports/*_import.owl linguist-generated=true
+# The two editable sources are not.
+src/ontology/aopo-edit.owl linguist-generated=false
+src/ontology/components/aopo-core.owl linguist-generated=false
+* text=auto eol=lf
