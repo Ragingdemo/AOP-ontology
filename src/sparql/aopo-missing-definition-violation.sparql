@@ -1,0 +1,9 @@
+# Every AOPO class and property carries an IAO:0000115 definition.
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+SELECT ?entity WHERE {
+  VALUES ?type { owl:Class owl:ObjectProperty owl:DatatypeProperty }
+  ?entity a ?type .
+  FILTER(STRSTARTS(STR(?entity), "http://purl.obolibrary.org/obo/AOPO_"))
+  FILTER NOT EXISTS { ?entity obo:IAO_0000115 ?d }
+}

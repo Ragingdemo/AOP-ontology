@@ -25,6 +25,16 @@ export_formats:
   - owl
   - obo
   - json
+components:
+  products:
+    - filename: aopo-core.owl
+robot_report:
+  custom_sparql_checks:
+    - equivalent-to-import-root
+    - dangling-aopkb
+    - aopo-missing-label
+    - aopo-orphan-class
+    - aopo-label-style
 robot_java_args: '-Xmx8G'
 reasoner: ELK
 create_obo_metadata: true

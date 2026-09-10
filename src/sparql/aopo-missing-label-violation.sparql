@@ -1,0 +1,9 @@
+# Every AOPO entity carries exactly one rdfs:label.
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?entity WHERE {
+  VALUES ?type { owl:Class owl:ObjectProperty owl:DatatypeProperty owl:AnnotationProperty }
+  ?entity a ?type .
+  FILTER(STRSTARTS(STR(?entity), "http://purl.obolibrary.org/obo/AOPO_"))
+  FILTER NOT EXISTS { ?entity rdfs:label ?l }
+}

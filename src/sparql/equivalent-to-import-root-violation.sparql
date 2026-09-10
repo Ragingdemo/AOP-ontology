@@ -1,0 +1,20 @@
+# An AOPO class must never be asserted owl:equivalentClass to the root of an
+# imported ontology. Equivalence to NCBITaxon:1, CL:0000000, UBERON:0001062,
+# CHEBI:24431 or GO:0008150 collapses the AOPO term into that root, so every
+# organism/cell/anatomical entity becomes an instance of the AOPO term.
+# Use rdfs:subClassOf, or a value restriction, instead.
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?aopo_class ?root WHERE {
+  VALUES ?root {
+    <http://purl.obolibrary.org/obo/NCBITaxon_1>
+    <http://purl.obolibrary.org/obo/CL_0000000>
+    <http://purl.obolibrary.org/obo/UBERON_0001062>
+    <http://purl.obolibrary.org/obo/CHEBI_24431>
+    <http://purl.obolibrary.org/obo/GO_0008150>
+    <http://purl.obolibrary.org/obo/BFO_0000015>
+    <http://purl.obolibrary.org/obo/BFO_0000040>
+    <http://purl.obolibrary.org/obo/IAO_0000030>
+  }
+  { ?aopo_class owl:equivalentClass ?root } UNION { ?root owl:equivalentClass ?aopo_class }
+  FILTER(STRSTARTS(STR(?aopo_class), "http://purl.obolibrary.org/obo/AOPO_"))
+}

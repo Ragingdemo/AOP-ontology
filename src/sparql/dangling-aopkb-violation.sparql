@@ -1,0 +1,6 @@
+# Nothing here should still reference the legacy aopkb.org namespace.
+# Legacy IRIs belong in mappings/aopo-aopkb.sssom.tsv, not in the axioms.
+SELECT ?s ?p ?o WHERE {
+  ?s ?p ?o .
+  FILTER(isIRI(?o) && STRSTARTS(STR(?o), "http://aopkb.org/aop_ontology#"))
+}

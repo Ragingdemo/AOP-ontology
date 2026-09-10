@@ -1,0 +1,9 @@
+# Every AOPO class has at least one asserted named superclass or equivalent.
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?entity WHERE {
+  ?entity a owl:Class .
+  FILTER(STRSTARTS(STR(?entity), "http://purl.obolibrary.org/obo/AOPO_"))
+  FILTER NOT EXISTS { ?entity rdfs:subClassOf ?sup . FILTER(isIRI(?sup)) }
+  FILTER NOT EXISTS { ?entity owl:equivalentClass ?eq }
+}

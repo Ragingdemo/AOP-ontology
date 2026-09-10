@@ -1,0 +1,15 @@
+# AOPO labels currently use snake_case (key_event, biological_action).
+# This query enforces that consistently; if the project switches to the OBO
+# convention of space-separated lowercase labels, invert the regex here and
+# migrate every label in one commit rather than drifting between styles.
+# Value individuals under aopo/value/ are exempt: their labels reproduce the
+# AOP-Wiki display vocabulary verbatim and must match it character for character.
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?entity ?label WHERE {
+  VALUES ?type { owl:Class owl:ObjectProperty owl:DatatypeProperty }
+  ?entity a ?type ;
+          rdfs:label ?label .
+  FILTER(STRSTARTS(STR(?entity), "http://purl.obolibrary.org/obo/AOPO_"))
+  FILTER(!REGEX(STR(?label), "^[a-z0-9]+(_[a-z0-9]+)*$"))
+}
