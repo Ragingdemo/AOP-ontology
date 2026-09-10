@@ -1129,9 +1129,10 @@
     <!-- http://purl.obolibrary.org/obo/AOPO_0000226 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/AOPO_0000226">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0008150"/>
-        <obo:IAO_0000115>A biological process, typically a Gene Ontology class, that a key event component references as the process that changes in the key event.</obo:IAO_0000115>
+        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/GO_0008150"/>
+        <obo:IAO_0000115>A biological process.</obo:IAO_0000115>
         <rdfs:label>biological_process</rdfs:label>
+        <rdfs:comment>AOPO's local alias for the Gene Ontology biological process root: it denotes exactly the same processes. It exists so that the key-event-component process slot has an AOPO-namespace range rather than hard-coding GO. Any GO biological process is a biological_process and vice versa.</rdfs:comment>
     </owl:Class>
     
 
@@ -1159,9 +1160,10 @@
     <!-- http://purl.obolibrary.org/obo/AOPO_0000230 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/AOPO_0000230">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1"/>
-        <obo:IAO_0000115>A taxon, typically an NCBI Taxonomy class, to which an adverse outcome pathway, key event or key event relationship is declared applicable.</obo:IAO_0000115>
+        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1"/>
+        <obo:IAO_0000115>An organism.</obo:IAO_0000115>
         <rdfs:label>taxonomy</rdfs:label>
+        <rdfs:comment>AOPO's local alias for the NCBITaxon organism root: it denotes exactly the same organisms. Used as the range of applies_to_taxon. It is not restricted to taxa that an AOP has been declared applicable to — that restriction lives on the applicability statement, not on this class.</rdfs:comment>
     </owl:Class>
     
 
@@ -1325,9 +1327,10 @@
     <!-- http://purl.obolibrary.org/obo/AOPO_0000243 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/AOPO_0000243">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
-        <obo:IAO_0000115>A cell type, typically a Cell Ontology class, in which a key event occurs.</obo:IAO_0000115>
+        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
+        <obo:IAO_0000115>A cell.</obo:IAO_0000115>
         <rdfs:label>cell_term</rdfs:label>
+        <rdfs:comment>AOPO's local alias for the Cell Ontology cell root: it denotes exactly the same cells. Used as the range of the key-event cell slot. It is not restricted to cells in which a key event occurs — that restriction lives on the key event, not on this class.</rdfs:comment>
     </owl:Class>
     
 
@@ -1335,9 +1338,10 @@
     <!-- http://purl.obolibrary.org/obo/AOPO_0000244 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/AOPO_0000244">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001062"/>
-        <obo:IAO_0000115>An anatomical entity, typically a UBERON class, that is the organ or tissue in which a key event occurs.</obo:IAO_0000115>
+        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001062"/>
+        <obo:IAO_0000115>An anatomical entity.</obo:IAO_0000115>
         <rdfs:label>organ_term</rdfs:label>
+        <rdfs:comment>AOPO's local alias for the UBERON anatomical entity root: it denotes exactly the same entities. Used as the range of the key-event organ slot. It is not restricted to organs or tissues in which a key event occurs — that restriction lives on the key event, not on this class.</rdfs:comment>
     </owl:Class>
     
 
